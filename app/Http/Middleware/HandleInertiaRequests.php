@@ -39,6 +39,8 @@ class HandleInertiaRequests extends Middleware
                 ...(new Ziggy)->toArray(),
                 'location' => $request->url(),
             ],
+            // adding cross site request token code globally for uploads
+            'csrf_token' => fn () => csrf_token()
         ];
     }
 }
